@@ -10,13 +10,6 @@ import cv2
 import os
 import csv
 
-input_path = 'videos/cats_and_dogs.mp4'
-output_path = 'output/cats_and_dogs_out.mp4'
-base_path = 'mask-rcnn-coco'
-confidence = 0.5
-threshold = 0.3
-
-
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--input", required=True,
@@ -163,7 +156,8 @@ while True:
 	# check if the video writer is None
 	if writer is None:
 		# initialize our video writer
-		fourcc = cv2.VideoWriter_fourcc(*"avc1")
+		fourcc = cv2.VideoWriter_fourcc(*"H264")
+		#fourcc = cv2.VideoWriter_fourcc(*"avc1")
 		writer = cv2.VideoWriter(args["output"], fourcc, 30,
 			(frame.shape[1], frame.shape[0]), True)
 
