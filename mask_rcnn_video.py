@@ -35,6 +35,11 @@ COLORS = np.random.randint(0, 255, size=(len(LABELS), 3),
 	dtype="uint8")
 print(str(len(LABELS))+ " Colors")
 
+# ROOT Path for the project
+ROOT_DIR = os.getcwd()
+VIDEO_DIR = '/content/drive/My Drive/videos'
+VIDEO_SAVE_DIR = os.path.join(VIDEO_DIR, "save")
+COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
       
 # derive the paths to the Mask R-CNN weights and model configuration
 weightsPath = os.path.sep.join([args["mask_rcnn"],
