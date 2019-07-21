@@ -161,8 +161,9 @@ while True:
 	# check if the video writer is None
 	if writer is None:
 		# initialize our video writer
-		fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+		#fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 		#fourcc = cv2.VideoWriter_fourcc(*'avc1')
+		fourcc = cv2.VideoWriter_fourcc('C','Y','U','V')
 		writer = cv2.VideoWriter(args["output"], fourcc, 30,
 			(frame.shape[1], frame.shape[0]), True)
 
